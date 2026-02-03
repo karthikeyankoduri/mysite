@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Valentine?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+      body {
+        font-family: 'Press Start 2P', cursive;
+        background-color: #ffdae9;
+        overflow-x: hidden;
+      }
+      /* Custom Pixel Border Utility */
+      .pixel-border {
+        box-shadow: 
+          -4px 0 0 0 black,
+          4px 0 0 0 black,
+          0 -4px 0 0 black,
+          0 4px 0 0 black;
+        margin: 4px; 
+      }
+      .pixel-corners {
+         clip-path: polygon(
+          0 4px, 4px 4px, 4px 0, 
+          calc(100% - 4px) 0, calc(100% - 4px) 4px, 100% 4px, 
+          100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%, 
+          4px 100%, 4px calc(100% - 4px), 0 calc(100% - 4px)
+        );
+      }
+      
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      
+      @keyframes floatUp {
+        0% { transform: translateY(110vh) translateX(0px) rotate(0deg); opacity: 0; }
+        10% { opacity: 0.6; }
+        30% { transform: translateY(80vh) translateX(15px) rotate(5deg); }
+        50% { transform: translateY(50vh) translateX(-15px) rotate(-5deg); }
+        70% { transform: translateY(20vh) translateX(10px) rotate(5deg); }
+        90% { opacity: 0.6; }
+        100% { transform: translateY(-10vh) translateX(-5px) rotate(10deg); opacity: 0; }
+      }
+      .animate-float-up {
+        animation-name: floatUp;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
