@@ -18,7 +18,6 @@ export const generateLovePoem = async (): Promise<string> => {
       model: 'gemini-3-flash-preview',
       contents: "Write a very short, cute, funny, pixel-video-game themed love poem (max 4 lines). Mention 'player 2' or 'level up'. Do not include markdown formatting like backticks.",
       config: {
-        maxOutputTokens: 100,
         temperature: 0.8,
       }
     });
